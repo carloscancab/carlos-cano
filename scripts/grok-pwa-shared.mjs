@@ -100,7 +100,9 @@ export function publicAppHost(hostHeader) {
     .toLowerCase();
   if (!host || !/^[a-z0-9.-]+$/.test(host) || !host.includes(".")) return "";
   if (/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)) return "";
-  if (isVercelSystemHost(host)) return "";
+  // Allow *.vercel.app so custom public/og.jpg unfurls on LinkedIn/X/WhatsApp.
+  // (Previously blocked because some Grok previews SSO-protect /og.jpg; this
+  // project's /og.jpg is publicly reachable.)
   return host;
 }
 
@@ -364,6 +366,9 @@ export function grokOgHeadTags({
     tags.push(`<meta property="og:image" content="${escapeHtml(image)}">`);
     tags.push(`<meta property="og:image:width" content="1200">`);
     tags.push(`<meta property="og:image:height" content="630">`);
+    tags.push(`<meta name="twitter:image" content="${escapeHtml(image)}">`);
+    tags.push(`<meta property="og:url" content="${escapeHtml(`https://${publicHost}/`)}">`);
+    tags.push(`<meta property="og:type" content="website">`);
     const banner = String(site.banner ?? "").trim();
     if (banner) {
       const bannerUrl = `https://${publicHost}${banner.startsWith("/") ? banner : `/${banner}`}`;
