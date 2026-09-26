@@ -15,6 +15,7 @@ import {
   type Article,
   type StudioItem,
 } from "@/lib/content";
+import { ogCover, shareMeta } from "@/lib/og/meta";
 
 export const Route = createFileRoute("/audience/$slug")({
   loader: ({ params }) => {
@@ -38,6 +39,14 @@ export const Route = createFileRoute("/audience/$slug")({
           ? `${loaderData.audience.name} — ${SITE.name}`
           : SITE.name,
       },
+      ...(loaderData
+        ? shareMeta({
+            title: `${loaderData.audience.name} — ${SITE.name}`,
+            description: loaderData.audience.story,
+            path: `/audience/${loaderData.audience.slug}`,
+            image: ogCover(`audience-${loaderData.audience.slug}`),
+          })
+        : []),
     ],
   }),
   component: AudiencePage,

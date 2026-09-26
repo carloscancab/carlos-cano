@@ -1,10 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactLinks, MetaLine } from "@/components/site-shell";
 import { NOW, formatDate } from "@/lib/content";
+import { shareMeta } from "@/lib/og/meta";
 
 export const Route = createFileRoute("/now")({
   head: () => ({
-    meta: [{ title: `Now — Carlos Cano` }],
+    meta: [
+      { title: `Now — Carlos Cano` },
+      ...shareMeta({
+        title: "Now — Carlos Cano",
+        description: `What I am doing now. ${NOW.lede}`,
+        path: "/now",
+      }),
+    ],
   }),
   component: NowPage,
 });

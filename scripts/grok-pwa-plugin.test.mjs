@@ -115,6 +115,29 @@ test("platform chrome overwrites share-card metas and always sets og:title", () 
   assert.doesNotMatch(out, /property="og:image"/);
 });
 
+test("a route-owned absolute og:image keeps the page's share metas", () => {
+  const html =
+    '<html><head><title>Retail</title>' +
+    '<meta property="og:title" content="Retail — Carlos Cano">' +
+    '<meta property="og:url" content="https://carlos-cano.vercel.app/audience/retail">' +
+    '<meta property="og:image" content="https://carlos-cano.vercel.app/og/audience-retail.jpg">' +
+    '<meta name="twitter:card" content="summary_large_image">' +
+    '<meta name="twitter:image" content="https://carlos-cano.vercel.app/og/audience-retail.jpg">' +
+    "</head></html>";
+  const out = injectGrokPwaHead(html, {
+    host: "carlos-cano.vercel.app",
+    site: { title: "Carlos Cano", card: "custom", image: "/og.jpg" },
+    cwd: mkdtempSync(join(tmpdir(), "grok-og-page-owned-")),
+  });
+  assert.equal(out.split('property="og:image"').length - 1, 1);
+  assert.equal(out.split('name="twitter:image"').length - 1, 1);
+  assert.equal(out.split('property="og:title"').length - 1, 1);
+  assert.equal(out.split('name="twitter:card"').length - 1, 1);
+  assert.match(out, /og:image" content="https:\/\/carlos-cano\.vercel\.app\/og\/audience-retail\.jpg"/);
+  assert.match(out, /og:url" content="https:\/\/carlos-cano\.vercel\.app\/audience\/retail"/);
+  assert.doesNotMatch(out, /\/og\.jpg"/);
+});
+
 test("does not duplicate twitter:card or og:title", () => {
   const once = injectGrokPwaHead("<html><head><title>Hello World</title></head></html>");
   const twice = injectGrokPwaHead(once);

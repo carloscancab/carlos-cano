@@ -1,9 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CoverImage } from "@/components/cover-image";
 import { MetaLine } from "@/components/site-shell";
-import { audienceLabel, brands } from "@/lib/content";
+import { SITE, audienceLabel, brands } from "@/lib/content";
+import { shareMeta } from "@/lib/og/meta";
 
-export const Route = createFileRoute("/brands")({ component: BrandsPage });
+export const Route = createFileRoute("/brands")({
+  head: () => ({
+    meta: shareMeta({
+      title: `Brands and narratives — ${SITE.name}`,
+      description: `Case studies: ${brands.map((b) => b.name).join(", ")}.`,
+      path: "/brands",
+    }),
+  }),
+  component: BrandsPage,
+});
 
 function BrandsPage() {
   return (

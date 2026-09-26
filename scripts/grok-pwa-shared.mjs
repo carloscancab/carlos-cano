@@ -380,6 +380,20 @@ export function grokOgHeadTags({
   return tags;
 }
 
+/**
+ * True when the document already carries an absolute og:image, i.e. the app's
+ * own route head() owns its share card (per-page thumbnails). Platform chrome
+ * then leaves every share meta alone instead of replacing it with the
+ * site-wide card.
+ */
+export function hasPageShareCard(html) {
+  for (const tag of String(html).match(/<meta\b[^>]*>/gi) ?? []) {
+    if (!/\bproperty\s*=\s*["']og:image["']/i.test(tag)) continue;
+    if (/\bcontent\s*=\s*["']https?:\/\/[^"']+["']/i.test(tag)) return true;
+  }
+  return false;
+}
+
 export function stripShareMetaTags(html) {
   return String(html).replace(/<meta\b[^>]*>/gi, (tag) => {
     const attrs = [...tag.matchAll(/\b(?:property|name)\s*=\s*["']([^"']+)["']/gi)];
@@ -437,7 +451,8 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  let next = stripShareMetaTags(html);
+  const pageOwnsShareCard = hasPageShareCard(html);
+  let next = pageOwnsShareCard ? html : stripShareMetaTags(html);
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -447,10 +462,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  if (!pageOwnsShareCard) {
+    next = insertAfterHeadOpen(
+      next,
+      grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
+    );
+  }
 
   if (!next.includes("/grok-app-builder/extensions.js")) {
     missing.push(...grokExtensionsHeadTags(projectId));

@@ -9,6 +9,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { SiteShell } from "@/components/site-shell";
 import { SITE } from "@/lib/content";
+import { shareMeta } from "@/lib/og/meta";
 import appCss from "../styles.css?url";
 
 const APP_NAME = SITE.name;
@@ -19,19 +20,9 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: `${APP_NAME} — ${SITE.role}` },
-      { name: "description", content: SITE.lede },
       { name: "theme-color", content: "#FBFBF9" },
-      { property: "og:title", content: SITE.name },
-      { property: "og:description", content: SITE.lede },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://carlos-cano.vercel.app/" },
-      { property: "og:image", content: "https://carlos-cano.vercel.app/og.jpg" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: SITE.name },
-      { name: "twitter:description", content: SITE.lede },
-      { name: "twitter:image", content: "https://carlos-cano.vercel.app/og.jpg" },
+      // Site-wide default share card; child routes override these per page.
+      ...shareMeta({ title: SITE.name, description: SITE.lede, path: "/" }),
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },

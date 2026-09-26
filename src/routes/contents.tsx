@@ -7,10 +7,18 @@ import {
   articlesForCategory,
   contentCategories,
 } from "@/lib/content";
+import { shareMeta } from "@/lib/og/meta";
 
 export const Route = createFileRoute("/contents")({
   head: () => ({
-    meta: [{ title: `Contents — ${SITE.name}` }],
+    meta: [
+      { title: `Contents — ${SITE.name}` },
+      ...shareMeta({
+        title: `Contents — ${SITE.name}`,
+        description: `The archive, filed by kind. ${articles.length} pieces. Not exhaustive.`,
+        path: "/contents",
+      }),
+    ],
   }),
   component: ContentsPage,
 });

@@ -4,6 +4,7 @@ import { ChainAbstractionCase } from "@/components/chain-abstraction-case";
 import { UniversalXCase } from "@/components/universal-x-case";
 import { MetaLine } from "@/components/site-shell";
 import { SITE, audienceLabel, getBrand } from "@/lib/content";
+import { ogCover, shareMeta } from "@/lib/og/meta";
 
 export const Route = createFileRoute("/brands_/$slug")({
   loader: ({ params }) => {
@@ -24,6 +25,15 @@ export const Route = createFileRoute("/brands_/$slug")({
           ? `${loaderData.brand.name} — ${SITE.name}`
           : SITE.name,
       },
+      ...(loaderData
+        ? shareMeta({
+            title: `${loaderData.brand.name} — ${SITE.name}`,
+            description: loaderData.brand.dek,
+            path: `/brands/${loaderData.brand.slug}`,
+            image: ogCover(`brands-${loaderData.brand.slug}`),
+            type: "article",
+          })
+        : []),
     ],
   }),
   component: BrandPage,

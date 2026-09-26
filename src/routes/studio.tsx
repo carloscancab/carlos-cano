@@ -3,10 +3,19 @@ import { Carousel } from "@/components/case-carousel";
 import { Playable } from "@/components/playable-media";
 import { MetaLine } from "@/components/site-shell";
 import { SITE, studio } from "@/lib/content";
+import { ogCover, shareMeta } from "@/lib/og/meta";
 
 export const Route = createFileRoute("/studio")({
   head: () => ({
-    meta: [{ title: `Podcasts — ${SITE.name}` }],
+    meta: [
+      { title: `Podcasts — ${SITE.name}` },
+      ...shareMeta({
+        title: `Podcasts — ${SITE.name}`,
+        description: (studio.find((s) => s.featured) ?? studio[0]).dek,
+        path: "/studio",
+        image: ogCover("studio"),
+      }),
+    ],
   }),
   component: StudioPage,
 });
