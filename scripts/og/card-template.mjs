@@ -33,10 +33,14 @@ const esc = (s) => String(s).replaceAll("&", "&amp;").replaceAll("<", "&lt;").re
 /**
  * @param {{ image: string, imageWidth: number, imageHeight: number,
  *   imageCss?: string, heading: string, headingSize?: number,
- *   subline: string, footer?: string }} o
+ *   subline: string, footer?: string | null }} o
+ *
+ * `footer: null` drops the bottom URL line; the text block is then centered
+ * vertically beside the image.
  */
 export function titleCardHtml(o) {
   const headingSize = o.headingSize ?? 132;
+  const footer = o.footer === null ? "" : o.footer ?? "carlos-cano.vercel.app";
   return `<!doctype html>
 <html><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=Shippori+Mincho:wght@500;600;700&display=block">
@@ -48,7 +52,7 @@ export function titleCardHtml(o) {
   .card { width:${CARD_CSS_WIDTH}px; height:${CARD_CSS_HEIGHT}px; display:flex; align-items:center; padding:0 80px; gap:72px; }
   .photo { flex:none; width:${o.imageWidth}px; height:${o.imageHeight}px; overflow:hidden; background:var(--surface); outline:1px solid rgba(22,20,18,.10); outline-offset:-1px; }
   .photo img { width:100%; height:100%; object-fit:cover; display:block; ${o.imageCss ?? ""} }
-  .copy { flex:1; min-width:0; display:flex; flex-direction:column; justify-content:center; height:470px; }
+  .copy { flex:1; min-width:0; display:flex; flex-direction:column; justify-content:center; ${footer ? "height:470px;" : ""} }
   .top { display:flex; align-items:center; gap:18px; }
   .top svg { width:60px; height:60px; flex:none; }
   .name { font-family:"Shippori Mincho", serif; font-weight:700; font-size:44px; line-height:1; }
@@ -67,7 +71,7 @@ export function titleCardHtml(o) {
     <h1>${esc(o.heading)}</h1>
     <div class="rule"></div>
     <p class="sub">${esc(o.subline)}</p>
-    <p class="foot">${esc(o.footer ?? "carlos-cano.vercel.app")}</p>
+    ${footer ? `<p class="foot">${esc(footer)}</p>` : ""}
   </div>
 </div></body></html>`;
 }

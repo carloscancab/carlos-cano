@@ -1,5 +1,5 @@
 /**
- * Renders the default share card: public/og-portfolio-v2.jpg, 2400x1260
+ * Renders the default share card: public/og-portfolio-v3.jpg, 2400x1260
  * (1200x630 at 2x), JPEG q92 4:4:4.
  *
  *   OG_PYTHON=/path/to/python-with-pillow node scripts/og/render-default-card.mjs
@@ -16,7 +16,7 @@ import { CARD_SCALE, dataUrl, renderPng, titleCardHtml } from "./card-template.m
 import { writeJpeg } from "./encode-jpeg.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "../..");
-const out = join(root, "public/og-portfolio-v2.jpg");
+const out = join(root, "public/og-portfolio-v3.jpg");
 
 const html = titleCardHtml({
   image: dataUrl(join(root, "public/images/portrait.jpg")),
@@ -25,6 +25,7 @@ const html = titleCardHtml({
   imageCss: "object-position:50% 0%; transform:scale(1.16); transform-origin:50% 8%;",
   heading: "Portfolio",
   subline: "Brands, narratives & content in Web3",
+  footer: null,
 });
 
 const browser = await chromium.launch({ channel: process.env.OG_CHROME_CHANNEL || "chrome" });

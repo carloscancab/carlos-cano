@@ -18,7 +18,7 @@ export const SITE_ORIGIN = "https://carlos-cano.vercel.app";
  * All share images are 2400x1260 JPEGs (1200x630 at 2x). Versioned file names
  * make LinkedIn/X fetch fresh copies instead of their cached ones.
  */
-export const DEFAULT_OG_IMAGE = "/og-portfolio-v2.jpg";
+export const DEFAULT_OG_IMAGE = "/og-portfolio-v3.jpg";
 export const DEFAULT_OG_IMAGE_ALT =
   "Portrait of Carlos Cano beside the word “Portfolio” and his circle mark";
 const OG_IMAGE_WIDTH = "2400";
@@ -62,6 +62,7 @@ export function shareMeta({
     { property: "og:url", content: url },
     { property: "og:site_name", content: "Carlos Cano" },
     { property: "og:image", content: img },
+    { property: "og:image:secure_url", content: img },
     { property: "og:image:width", content: OG_IMAGE_WIDTH },
     { property: "og:image:height", content: OG_IMAGE_HEIGHT },
     { property: "og:image:type", content: "image/jpeg" },
