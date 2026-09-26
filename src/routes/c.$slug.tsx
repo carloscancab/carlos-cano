@@ -43,6 +43,7 @@ export const Route = createFileRoute("/c/$slug")({
             description: loaderData.category.story,
             path: `/c/${loaderData.category.slug}`,
             image: ogCover(`c-${loaderData.category.slug}`),
+            imageAlt: loaderData.category.imageAlt,
           })
         : []),
     ],

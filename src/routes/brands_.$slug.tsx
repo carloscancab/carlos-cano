@@ -31,6 +31,7 @@ export const Route = createFileRoute("/brands_/$slug")({
             description: loaderData.brand.dek,
             path: `/brands/${loaderData.brand.slug}`,
             image: ogCover(`brands-${loaderData.brand.slug}`),
+            imageAlt: loaderData.brand.coverAlt,
             type: "article",
           })
         : []),

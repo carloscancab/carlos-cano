@@ -1,14 +1,14 @@
 {
-  "c-narrative": "/og/c-narrative.jpg",
-  "c-research": "/og/c-research.jpg",
-  "c-promotional": "/og/c-promotional.jpg",
-  "c-multimedia": "/og/c-multimedia.jpg",
-  "c-technical": "/og/c-technical.jpg",
-  "audience-retail": "/og/audience-retail.jpg",
-  "audience-institutional": "/og/audience-institutional.jpg",
-  "audience-b2b": "/og/audience-b2b.jpg",
-  "brands-chain-abstraction": "/og/brands-chain-abstraction.jpg",
-  "brands-universal-x": "/og/brands-universal-x.jpg",
-  "brands-panther-protocol": "/og/brands-panther-protocol.jpg",
-  "studio": "/og/studio.jpg"
+  "c-narrative": "/og/v2/c-narrative.jpg",
+  "c-research": "/og/v2/c-research.jpg",
+  "c-promotional": "/og/v2/c-promotional.jpg",
+  "c-multimedia": "/og/v2/c-multimedia.jpg",
+  "c-technical": "/og/v2/c-technical.jpg",
+  "audience-retail": "/og/v2/audience-retail.jpg",
+  "audience-institutional": "/og/v2/audience-institutional.jpg",
+  "audience-b2b": "/og/v2/audience-b2b.jpg",
+  "brands-chain-abstraction": "/og/v2/brands-chain-abstraction.jpg",
+  "brands-universal-x": "/og/v2/brands-universal-x.jpg",
+  "brands-panther-protocol": "/og/v2/brands-panther-protocol.jpg",
+  "studio": "/og/v2/studio.jpg"
 }

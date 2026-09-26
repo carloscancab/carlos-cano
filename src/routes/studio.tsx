@@ -14,6 +14,7 @@ export const Route = createFileRoute("/studio")({
         description: (studio.find((s) => s.featured) ?? studio[0]).dek,
         path: "/studio",
         image: ogCover("studio"),
+        imageAlt: `${(studio.find((s) => s.featured) ?? studio[0]).coverAlt}, beside the word “Podcasts”`,
       }),
     ],
   }),
