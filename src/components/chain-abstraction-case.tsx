@@ -346,7 +346,7 @@ export function ChainAbstractionCase() {
               />
               <Slide
                 frame="chart"
-                src={`${img}/frag-bridge-dau.png`}
+                src={`${img}/frag-bridge-dau-v2.png`}
                 alt="Bridge daily active users by bridge, 2021 to 2024"
                 caption="Bridge volume was at ATHs. An inconvenient UX forced users to constantly be seeking incentives across chains."
               />
@@ -377,9 +377,9 @@ export function ChainAbstractionCase() {
               simple interface.
             </li>
             <li>
-              A strategic launch that made users and builders and users alike
-              excited. In Web3 infra, even if you’re not interacting directly
-              with the final consumer, you need to constantly engage them.
+              A strategic launch that made users and builders alike excited.
+              In Web3 infra, even if you’re not interacting directly with the
+              final consumer, you need to constantly engage them.
             </li>
           </ul>
         </Chapter>
