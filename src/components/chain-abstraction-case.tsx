@@ -7,7 +7,7 @@ const img = "/images/cases/particle";
 const toc = [
   { id: "sign-in", label: "Where we started" },
   { id: "the-problem", label: "The problem (or opportunity!)" },
-  { id: "the-product", label: "Branding the product" },
+  { id: "the-product", label: "Branding the solution" },
   { id: "the-name", label: "The name" },
   { id: "the-edges", label: "The edges" },
   { id: "the-map", label: "The map" },
@@ -190,11 +190,10 @@ export function ChainAbstractionCase() {
         <Chapter id="sign-in" n="01" title="Where we started">
           <p className="mt-5 text-lg leading-relaxed">
             From day one, Particle Network did one thing: try to make Web3 as
-            easy as an app.
+            friendly as an app.
           </p>
           <p className="mt-4 text-lg leading-relaxed">
-            The goal was fixing Web3’s user experience. The first product was
-            in-app wallets, launching alongside{" "}
+            The first product was in-app wallets, launching alongside{" "}
             <a
               href="https://www.privy.io/"
               target="_blank"
@@ -216,9 +215,9 @@ export function ChainAbstractionCase() {
           </p>
           <p className="mt-4 text-lg leading-relaxed">
             A person could go into a dApp, start using it the way they open
-            Gmail, create a wallet instantly, and deposit assets. Without
-            thinking about seed phrases, the network’s gas token, extensions,
-            or receiving a lecture.
+            Gmail, create a wallet instantly, and deposit assets. The tools
+            allowed them to forget about seed phrases, the network’s gas token,
+            extensions, and receiving a lecture every time they opened a dApp.
           </p>
           <p className="mt-4 text-lg leading-relaxed">
             <strong className="font-medium">
@@ -235,9 +234,8 @@ export function ChainAbstractionCase() {
             className="w-full"
           />
           <figcaption className="mt-3 text-base leading-relaxed text-muted">
-            Wallet-as-a-Service. Email, Google, Apple, or the wallet they
-            already have. An account, inside the app, just like in FinTech.
-            Believe it or not this was revolutionary.
+            Wallet-as-a-Service. An account inside an app, just like in
+            FinTech. Believe it or not, this was revolutionary.
           </figcaption>
         </figure>
       </section>
@@ -258,17 +256,17 @@ export function ChainAbstractionCase() {
         </Chapter>
 
         <blockquote className="mx-auto mt-12 max-w-3xl px-5 font-display text-3xl leading-[1.2] sm:px-6 sm:text-4xl">
-          We had solved onboarding. The new problem was that every user base
+          We had solved onboarding. The problem now was that every user base
           was disconnected.
         </blockquote>
         <blockquote className="mx-auto mt-8 max-w-3xl px-5 font-display text-3xl leading-[1.2] sm:px-6 sm:text-4xl">
-          And certainly, the UX company had to find a way to solve it.
+          And certainly, The UX Company had to find a way to solve it.
         </blockquote>
       </section>
 
       <DarkBand>
         <h2 className="font-display text-3xl leading-[1.2] sm:text-4xl">
-          So we began defining the problem, and ringing the alarm.
+          So we began defining the problem. And ringing the alarm.
         </h2>
         <div className="mt-10">
           <ArticleHead
@@ -290,8 +288,8 @@ export function ChainAbstractionCase() {
                 8.29M
               </p>
               <p className="mt-4 text-base leading-relaxed opacity-80">
-                Daily active users in all of Web3. Somehow expected to use
-                1000+ chains.
+                Daily active users in all of Web3. Actively incentivized to
+                fragment away. Somehow expected to use 1000+ chains.
               </p>
             </li>
             <li>
@@ -300,7 +298,7 @@ export function ChainAbstractionCase() {
               </p>
               <p className="mt-4 text-base leading-relaxed opacity-80">
                 Peak quarterly VC into crypto, Q1 2022. Most of it turned into
-                incentives to get new users. Unsustainable.
+                incentives to lock users’ capital. Unsustainable.
               </p>
             </li>
             <li>
@@ -317,7 +315,7 @@ export function ChainAbstractionCase() {
               </p>
               <p className="mt-4 text-base leading-relaxed opacity-80">
                 TVL on most chains sat in the top ten dApps. Ethereum: 85%+.
-                New chains copied; very few profited.
+                New chains copied; 0 innovation, almost 0 profits.
               </p>
             </li>
           </ol>
@@ -332,55 +330,56 @@ export function ChainAbstractionCase() {
                 frame="chart"
                 src={`${img}/frag-chart-bridge.png`}
                 alt="Daily volume of DEXs, CEXs, and bridges"
-                caption="CEXs still dwarf DEXs. Bridges sit under both."
+                caption="More chains, but flat volume across all of them. This is what “siloed” looks like."
               />
               <Slide
                 frame="chart"
                 src={`${img}/frag-chart-vc.png`}
                 alt="TVL concentration in top DeFi protocols"
-                caption="TVL concentration in the top DeFi protocols."
+                caption="Web3 activity was growing linearly. Chains were growing exponentially."
               />
               <Slide
                 frame="chart"
                 src={`${img}/frag-image-2.png`}
                 alt="Average daily transactions on popular chains"
-                caption="Average daily transactions on popular chains."
+                caption="Most of chains’ raised capital was actively being used to silo users."
               />
               <Slide
                 frame="chart"
-                src={`${img}/frag-image-5.png`}
-                alt="Share of DeFi TVL across chains"
-                caption="Share of DeFi TVL across chains."
+                src={`${img}/frag-bridge-dau.png`}
+                alt="Bridge daily active users by bridge, 2021 to 2024"
+                caption="Bridge volume was at ATHs. An inconvenient UX forced users to constantly be seeking incentives across chains."
               />
             </Carousel>
           </div>
           <p className="mt-14 max-w-2xl text-lg leading-relaxed sm:text-xl">
-            Web3 needed a way to reconcile 1000 chains with the way users
-            really wanted to experience the ecosystem: As an extension of
-            the Internet they already used.
+            Crypto needed a way to reconcile 1000 chains with the way people
+            really wanted to experience Web3: As an extension of the Internet
+            they already know.
           </p>
         </Body>
       </DarkBand>
 
       <section className="scroll-mt-24">
-        <Chapter id="the-product" n="03" title="Branding the product">
+        <Chapter id="the-product" n="03" title="Branding the solution">
           <p className="mt-5 text-lg leading-relaxed">
-            We knew what the product needed to do:
+            We knew what our product needed to do to be a true solution:
           </p>
           <ul className="mt-5 list-disc space-y-3 pl-5 text-lg leading-relaxed">
             <li>
               Leverage our existing positioning, partner network, and
-              technology.
+              technology. We were not a brand-new name, and we had existing,
+              valuable connections that valued UX.
             </li>
             <li>
               Eliminate the main problems of an ecosystem with 1000 chains:
-              bridging, multiple gas tokens, and scattered balances.
+              bridging, multiple gas tokens, and scattered balances, within a
+              simple interface.
             </li>
             <li>
-              Make{" "}
-              <strong className="font-medium">users</strong> excited so that{" "}
-              <strong className="font-medium">companies</strong> would want to
-              provide them this experience.
+              A strategic launch that made users and builders and users alike
+              excited. In Web3 infra, even if you’re not interacting directly
+              with the final consumer, you need to constantly engage them.
             </li>
           </ul>
         </Chapter>
@@ -388,7 +387,7 @@ export function ChainAbstractionCase() {
 
       <section className="mt-14 bg-invert py-16 text-invert-fg sm:py-20">
         <p className="px-3 text-center text-sm tracking-[0.2em] uppercase opacity-60">
-          Universal Accounts
+          Enter Universal Accounts
         </p>
         <p className="mt-5 px-3 text-center font-display text-[clamp(1.05rem,4.1vw,3.35rem)] leading-none tracking-tight whitespace-nowrap">
           One account. One balance. Any chain.
@@ -398,21 +397,22 @@ export function ChainAbstractionCase() {
             href="https://blog.particle.network/universal-accounts/"
             kicker="Product · 2024"
             title="Universal Accounts"
-            dek="One account. One balance. Any chain. Account-level chain abstraction (more about that soon!)."
+            dek="One account, one balance, any chain. Account-level chain abstraction."
             thumb={`${img}/ua-hero.png`}
             thumbAlt="One account, 1000 chains"
           />
           <Body>
           <p className="text-lg leading-relaxed">
-            A Universal Account is a smart account that sits across chains.
-            One address. Assets wherever they actually are, treated as one
-            balance. The user does not pick a network, does not bridge, does
-            not hold five gas tokens. They sign. The rest is the product’s
-            problem.
+            The solution we built was the Universal Account: a smart account
+            that sits across chains. One address. Assets sit wherever they
+            actually are, but the user can treat them as one balance. You don’t
+            pick a network, do not bridge, do not hold gas tokens for every
+            chain. Accounts were linked to a Web2-generated one, building upon
+            our existing successful product.
           </p>
           <p className="mt-4 text-lg leading-relaxed">
-            Particle’s L1 coordinates. It is not what the user uses. The
-            user uses an account.
+            The UX was exactly what the user wants: What do they see? Their
+            money—that’s what they care about!
           </p>
 
           <ol className="mt-10 grid gap-10 sm:grid-cols-3">
@@ -422,7 +422,7 @@ export function ChainAbstractionCase() {
               </p>
               <p className="mt-2 font-display text-xl">The account</p>
               <p className="mt-2 text-base leading-relaxed opacity-80">
-                One address, ERC-4337, on every chain that matters. The
+                One ERC-4337 address on every chain that matters. The
                 signature is the same. The chain is not the user’s job.
               </p>
             </li>
