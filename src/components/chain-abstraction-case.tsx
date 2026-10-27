@@ -412,7 +412,11 @@ export function ChainAbstractionCase() {
           </p>
           <p className="mt-4 text-lg leading-relaxed">
             The UX was exactly what the user wants: What do they see? Their
-            money—that’s what they care about!
+            money, that’s what they care about!
+          </p>
+          <p className="mt-4 text-lg leading-relaxed">
+            For builders, the setup was modular, so they could better adapt it
+            to their needs:
           </p>
 
           <ol className="mt-10 grid gap-10 sm:grid-cols-3">
@@ -420,27 +424,30 @@ export function ChainAbstractionCase() {
               <p className="text-sm tracking-[0.16em] uppercase opacity-60">
                 01
               </p>
-              <p className="mt-2 font-display text-xl">The account</p>
+              <p className="mt-2 font-display text-xl">Universal Accounts</p>
               <p className="mt-2 text-base leading-relaxed opacity-80">
-                One ERC-4337 address on every chain that matters. The
-                signature is the same. The chain is not the user’s job.
+                The user-facing layer, fully customizable so every project
+                could make it theirs: different connection methods,
+                white-label branding, customizable info displays.
               </p>
             </li>
             <li>
               <p className="text-sm tracking-[0.16em] uppercase opacity-60">
                 02
               </p>
-              <p className="mt-2 font-display text-xl">The liquidity</p>
+              <p className="mt-2 font-display text-xl">Universal Liquidity</p>
               <p className="mt-2 text-base leading-relaxed opacity-80">
-                Universal Liquidity. Settle, swap, send from the unified
-                balance. The money moves. The user does not.
+                The underlying engine. Interconnected ERC-4337 addresses on
+                every chain that matters, with us deploying more on a bespoke
+                basis. Accessible without permission, so you could take it and
+                run with your own user-facing solution if you wanted.
               </p>
             </li>
             <li>
               <p className="text-sm tracking-[0.16em] uppercase opacity-60">
                 03
               </p>
-              <p className="mt-2 font-display text-xl">The gas</p>
+              <p className="mt-2 font-display text-xl">Universal Gas</p>
               <p className="mt-2 text-base leading-relaxed opacity-80">
                 Universal Gas. Pay the fee in whatever they hold. The
                 destination’s gas token is ours to fetch.
