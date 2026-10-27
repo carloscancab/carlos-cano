@@ -18,10 +18,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative min-h-dvh bg-bg text-fg">
       <div className="sticky top-0 z-40">
-        <p className="border-b border-invert bg-invert px-5 py-2 text-center text-[11px] leading-snug text-invert-fg sm:px-8">
-          I’m still adding content to this site. Some pages may not work yet.{" "}
-          <em>Yours truly, Carlos.</em>
-        </p>
         <header className="border-b border-rule bg-bg/85 backdrop-blur-[6px]">
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-5 sm:px-8">
           <Link

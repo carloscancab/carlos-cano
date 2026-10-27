@@ -35,7 +35,7 @@ function Home() {
               <Link to="/brands" className={bioLink}>
                 brands
               </Link>
-              , narratives, and content in Web3. For{" "}
+              , narratives, and content for complex tech products. Mostly in Web3. For{" "}
               <strong className="font-medium text-fg">people</strong>, not{" "}
               <em>“users.”</em>
             </p>
@@ -47,7 +47,7 @@ function Home() {
                   branding
                 </Link>{" "}
                 and content experience, collaborating on fundraises{" "}
-                <strong className="font-medium text-fg">totaling $75M</strong>.
+                <strong className="font-medium text-fg">totaling $75M+</strong>.
               </li>
               <li>
                 <strong className="font-medium text-fg">

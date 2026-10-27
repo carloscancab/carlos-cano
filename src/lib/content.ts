@@ -138,9 +138,9 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/carloscancab",
   statement: "Everybody wants to be understood.",
   cycle: ["understood", "believed", "useful"] as const,
-  lede: "I build brands, narratives, and content in Web3. For people, not “users.”",
+  lede: "I build brands, narratives, and content for complex tech products. Mostly in Web3. For people, not “users.”",
   results: [
-    "10+ years of branding and content experience, collaborating on fundraises totaling $75M.",
+    "10+ years of branding and content experience, collaborating on fundraises totaling $75M+.",
     "Deep expertise in Web3 and crypto, collaborating on different projects with names like Binance Labs, Circle, and Solana.",
     "Built one of the narratives that dominated Web3 conversations for over a year.",
     "Taken products from idea to top-10 in extremely competitive sectors.",

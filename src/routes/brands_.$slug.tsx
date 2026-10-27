@@ -48,13 +48,6 @@ function BrandPage() {
 
   return (
     <article>
-      <div className="border-b border-invert bg-invert px-5 py-3 text-center text-invert-fg sm:px-8">
-        <p className="text-sm leading-relaxed sm:text-base">
-          This case study is still being edited. However, it’s live to give
-          you a general idea of my work.{" "}
-          <em className="opacity-80">Yours truly, Carlos.</em>
-        </p>
-      </div>
       <figure className="overflow-hidden bg-surface">
         <CoverImage
           src={brand.cover}
