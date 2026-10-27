@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CoverImage } from "@/components/cover-image";
 import { MetaLine } from "@/components/site-shell";
-import { SITE, audienceLabel, brands } from "@/lib/content";
+import { SITE, audienceLabel, listedBrands as brands } from "@/lib/content";
 import { shareMeta } from "@/lib/og/meta";
 
 export const Route = createFileRoute("/brands")({
@@ -31,21 +31,13 @@ function BrandsPage() {
         >
           Chain Abstraction
         </Link>
-        ,{" "}
+        {" "}and{" "}
         <Link
           to="/brands/$slug"
           params={{ slug: "universal-x" }}
           className="underline underline-offset-4 hover:text-fg"
         >
           Universal X
-        </Link>
-        , and{" "}
-        <Link
-          to="/brands/$slug"
-          params={{ slug: "panther-protocol" }}
-          className="underline underline-offset-4 hover:text-fg"
-        >
-          Panther Protocol
         </Link>
         . Related work also lives in{" "}
         <Link to="/contents" className="underline underline-offset-4 hover:text-fg">

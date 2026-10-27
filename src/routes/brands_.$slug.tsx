@@ -35,6 +35,9 @@ export const Route = createFileRoute("/brands_/$slug")({
             type: "article",
           })
         : []),
+      ...(loaderData?.brand.unlisted
+        ? [{ name: "robots", content: "noindex, nofollow" }]
+        : []),
     ],
   }),
   component: BrandPage,

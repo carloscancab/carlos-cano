@@ -161,7 +161,7 @@ function CategoryPage() {
         <section className="border-t border-rule">
           <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-16">
             <SectionHead kicker="00 · Cases" title="Case studies">
-              Chain abstraction, Universal X, Panther.{" "}
+              Chain abstraction and Universal X.{" "}
               <Link
                 to="/brands"
                 className="underline underline-offset-4 hover:text-fg"

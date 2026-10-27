@@ -185,7 +185,7 @@ function Home() {
               to="/brands/$slug"
               params={{ slug: item.slug }}
               className={`group ${
-                i === cases.length - 1
+                cases.length % 2 === 1 && i === cases.length - 1
                   ? "sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.75rem)]"
                   : ""
               }`}

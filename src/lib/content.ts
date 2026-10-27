@@ -83,6 +83,8 @@ export type Brand = {
   identity: BrandIdentity;
   client?: string;
   featured?: boolean;
+  /** Out of circulation: reachable by URL, never linked, noindex. */
+  unlisted?: boolean;
   also?: AudienceSlug[];
   problem: string;
   work: string;
@@ -151,7 +153,7 @@ export const SITE = {
 };
 
 export const NOW = {
-  updated: "2026-09-04",
+  updated: "2026-10-26",
   lede: "From Parral, Chihuahua.",
   sections: [
     {
@@ -160,15 +162,11 @@ export const NOW = {
     },
     {
       title: "Work",
-      body: "I spent almost three years at Particle Network, leading ecosystem and strategy. That's done. I'm looking for the next career move. Slowly, on purpose.",
+      body: "I spent almost three years at Particle Network as Senior Product Marketing Manager, owning brand, GTM, and the chain abstraction narrative. Since August I’ve been consulting independently on go-to-market and positioning. I’m looking for my next full-time product marketing role.",
     },
     {
       title: "Music",
       body: "I'm using the time to work on music, as Carlos Maximiliano. The TikTok grew to 1,500. I'm happy with that.",
-    },
-    {
-      title: "This site",
-      body: "Rebuilding it. Some pages are empty. If a page isn't ready, it isn't linked.",
     },
   ],
 };
@@ -1569,7 +1567,7 @@ export const brands: Brand[] = [
     dek: "From raising $22M to surviving the most complex panorama in crypto’s history.",
     audience: "institutional",
     kind: "brand",
-    year: "2025",
+    year: "2021–2023",
     role: "Brand, institutional narrative, positioning",
     cover: "/images/panther-protocol.jpg",
     coverAlt: "Ink restyle of the Panther Protocol panther-in-circle mark",
@@ -1581,6 +1579,7 @@ export const brands: Brand[] = [
       color: "Ink / paper",
     },
     featured: true,
+    unlisted: true,
     problem:
       "Privacy in DeFi arrived sounding like a feature for insiders. Institutions needed confidential trading zones with programmable rules, and a face that could survive a due-diligence pack.",
     work: "Positioning and narrative for Panther as infrastructure for confidential on-chain finance. Language for desks and funds.",
@@ -1592,6 +1591,9 @@ export const brands: Brand[] = [
     ],
   },
 ];
+
+/** Brands that can be linked from the site (excludes unlisted cases). */
+export const listedBrands: Brand[] = brands.filter((b) => !b.unlisted);
 
 export const studio: StudioItem[] = [
   {
@@ -1848,7 +1850,7 @@ function studioCard(s: StudioItem): WorkCard {
 export function allWork(): WorkCard[] {
   return [
     ...articles.map(articleCard),
-    ...brands.map(brandCard),
+    ...listedBrands.map(brandCard),
     ...studio.map(studioCard),
   ].sort((a, b) => b.date.localeCompare(a.date));
 }
@@ -1864,7 +1866,6 @@ export function featuredWork(): WorkCard[] {
 const FEATURED_CASE_ORDER = [
   "chain-abstraction",
   "universal-x",
-  "panther-protocol",
 ] as const;
 
 export function featuredCases(): Brand[] {
@@ -2097,7 +2098,7 @@ export const COLLECTION_META = [
 ];
 
 export function brandsFor(slug: AudienceSlug): Brand[] {
-  return brands
+  return listedBrands
     .filter((b) => b.audience === slug || b.also?.includes(slug))
     .sort((a, b) => Number(a.audience !== slug) - Number(b.audience !== slug));
 }
