@@ -839,9 +839,16 @@ export function ChainAbstractionCase() {
                 </p>
               </li>
               <li>
-                <p className="font-display text-5xl tracking-tight">90+</p>
+                <p className="font-display text-5xl tracking-tight">250</p>
                 <p className="mt-2 text-base leading-relaxed text-muted">
-                  Teams integrating. 60+ Coalition networks.
+                  dApps committed to integrate. 90+ live. 60+ Coalition
+                  networks.
+                </p>
+              </li>
+              <li>
+                <p className="font-display text-5xl tracking-tight">$15B</p>
+                <p className="mt-2 text-base leading-relaxed text-muted">
+                  Volume processed through Universal Accounts.
                 </p>
               </li>
             </ul>

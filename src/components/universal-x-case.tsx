@@ -476,14 +476,13 @@ export function UniversalXCase() {
               <li>
                 <p className="font-display text-5xl tracking-tight">$8M</p>
                 <p className="mt-2 text-base leading-relaxed text-muted">
-                  ARR off the terminal. About 1% a trade.
+                  Average annual revenue. About 1% a trade.
                 </p>
               </li>
               <li>
-                <p className="font-display text-5xl tracking-tight">$800M</p>
+                <p className="font-display text-5xl tracking-tight">$1B+</p>
                 <p className="mt-2 text-base leading-relaxed text-muted">
-                  Volume through the app by October 2025. On the way to a
-                  billion by year end.
+                  Cumulative volume through the app.
                 </p>
               </li>
               <li>
@@ -491,6 +490,12 @@ export function UniversalXCase() {
                 <p className="mt-2 text-base leading-relaxed text-muted">
                   Average daily volume, Q1 2025. +15,154% quarter on
                   quarter.
+                </p>
+              </li>
+              <li>
+                <p className="font-display text-5xl tracking-tight">Top 10</p>
+                <p className="mt-2 text-base leading-relaxed text-muted">
+                  Among spot trading platforms.
                 </p>
               </li>
             </ul>
@@ -511,12 +516,6 @@ export function UniversalXCase() {
                 <p className="font-display text-5xl tracking-tight">19.3k</p>
                 <p className="mt-2 text-base leading-relaxed text-muted">
                   Daily trades, Q1 2025.
-                </p>
-              </li>
-              <li>
-                <p className="font-display text-5xl tracking-tight">$59k</p>
-                <p className="mt-2 text-base leading-relaxed text-muted">
-                  Daily fees, Q1 2025. The account was earning.
                 </p>
               </li>
             </ul>
